@@ -13,12 +13,19 @@ variable "network" {
 
 variable "container" {
   type = object({
-    image          = string
-    cpu            = number
-    memory         = number
-    port           = number
-    desired_count  = number
+    image         = string
+    cpu           = number
+    memory        = number
+    port          = number
+    desired_count = number
   })
+}
+
+variable "load_balancer" {
+  type = object({
+    target_group_arn = string
+  })
+  default = null
 }
 
 variable "tags" {
